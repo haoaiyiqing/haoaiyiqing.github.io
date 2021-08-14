@@ -17,11 +17,12 @@ body {
 	background: #ccc url('../images/bg_out.png');
 	color: #7c7873;
 	/* font-family: 'YanoneKaffeesatzRegular'; */
-	font-family: 'STKaiti';
+	/* font-family: 'STKaiti'; */
+	font-family: 'KaiTi_GB2312';
 }
 p {
 	text-shadow:0 1px 0 #fff;
-	font-size:22px;
+	font-size:18px;
 
 }
 #wrap {

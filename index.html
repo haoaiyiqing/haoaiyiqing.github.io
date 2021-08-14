@@ -1,53 +1,62 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <title>Envelope</title>
-        <link rel="stylesheet" href="style.css">
-        <script src="snap.svg-min.js"></script>
-        <script>
-             window.onload = function () {
-                var icon = Snap.select("#icon");
-                var triangle = icon.select("#triangle");
-                var message = icon.select("#message");
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="pragma" content="no-cache" />
+<title>Our Story</title>
 
-                function revert() {
-                    triangle.animate({
-                        points: "5,50 145,50 75,100"
-                    }, 500, mina.easeout);
-                    message.animate({
-                        y: "140"
-                    }, 500, mina.easeout);
-                }
+<link href="css/style.css" type="text/css" rel="stylesheet" />
 
-                function open() {
-                    clearTimeout(revert);
-                    triangle.animate({
-                        points: "0,50 150,50 75,0"
-                    }, 500, mina.easein, function() { setTimeout(revert, 1000); });
-                    message.animate({
-                        y: "20"
-                    }, 800, mina.easein);
-                    
-                }
+</head>
+<body>
 
-                icon.click(open);
-            }
-        </script>
-    </head>
-    <body>
+<div id="wrap">
+	<h1>&nbsp</h1>
+	<div id='form_wrap' >
+		<form>
+			<p>亲爱的益清,</p>
+			<p>
+				&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp我好想你，今年很遗憾七夕没法和宝贝一起过，希望你一切都好。原本准备的礼物也出了点儿问题，但这也使我有了另一个新想法，我希望以当前这个网页为起点，来记录我们在一起的每一个到过的地方，有点儿像旅行地图那样，也或许还可以构思出其他内容。未来我们商量着来！
+			</p>
+			<p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp最后祝我家清清大宝贝七夕快乐！</p>
 
-        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-     width="150px" height="150px" viewBox="0 0 150 150" enable-background="new 0 0 150 150"
-     xml:space="preserve" style="width: 100px; height: 100px;">
-        <g fill="#FFFFFF" stroke="#FFFFFF" id="icon">
-            <polygon fill="#FFFFFF" stroke="#FFFFFF" id="triangle" points="5,50 145,50 75,100"/>
-            <rect id="message" x="30" y="140" width="90" height="150" fill="#F5F5F5" />
-            <path d="M0 50 75 105 150 50 150 150 0 150 z"
-                  fill-rule="evenodd"/>
-        </g>
-        </svg>
+			<p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp此致</p>	
+			<p>敬礼</p>
+			<p style="text-align:right">爱你的王泽昊&nbsp</p>
+			<p style="text-align:right">2021年8月14日</p>
+
+			<p style="font-size: 12px;text-align:center">下面这个计时器记录了我们在一起的时间，随时可以回来看!</p>
+			<p id='timer' style="font-size: 14px;text-align:center"></p>
+
+			<!-- <input type="submit" name ="submit" value="Now, I send, thanks!" /> -->
+		</form>
+	</div>
+</div>
 
 
-    </body>
+<script>
+	// Set the date we're counting down to
+	var startDate = new Date("Apr 17, 2021 23:00:00").getTime();
+	
+	// Update the count down every 1 second
+	var x = setInterval(function() {
+	
+	  // Get today's date and time
+	  var now = new Date().getTime();
+	  now = now - startDate
+		
+	  // Time calculations for days, hours, minutes and seconds
+	  var days = Math.floor(now / (1000 * 60 * 60 * 24));
+	  var hours = Math.floor((now % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+	  var minutes = Math.floor((now % (1000 * 60 * 60)) / (1000 * 60));
+	  var seconds = Math.floor((now % (1000 * 60)) / 1000);
+		
+	  // Output the result in an element with id="demo"
+	  document.getElementById("timer").innerHTML = days + "天 " + hours + "小时 "
+	  + minutes + "分 "+ seconds+'秒 ';
+		
+	}, 1000);
+	</script>
+
+</body>
 </html>

@@ -11,9 +11,7 @@ $('#btnClick').on('click',function(){
     /*    
     So, if div 1 is visible, the condition will be true
     */
-        // $('#wrap2').show().siblings('div').hide();
-        $('#wrap').css('display', 'none');
-        $('#wrap2').css('display', 'block');
+        $('#wrap2').html($('#static').html()).show().siblings('div').hide();
             
     /*
     When you use it with parameter, example:

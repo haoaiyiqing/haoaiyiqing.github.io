@@ -22,13 +22,16 @@ body {
 }
 p {
 	text-shadow:0 1px 0 #fff;
-	font-size:18px;
+	font-size:17px;
 
 }
-#wrap {
+p colored{
+	color: red;
+}
+#wrap, #wrap2 {
 	width:530px;
 	margin:20px auto 0;
-	height:1000px;
+	height:700px;
 }
 #wrap h1 {
 	margin-bottom:20px;
@@ -36,6 +39,14 @@ p {
 	font-size:48px;
 	text-shadow:0 1px 0 #ede8d9;
 }
+
+#wrap2 h1 {
+	margin-bottom:20px;
+	text-align:center;
+	font-size:48px;
+	text-shadow:0 1px 0 #ede8d9;
+}
+
 #form_wrap {
 	overflow:hidden;
 	height:446px;

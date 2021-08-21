@@ -6,11 +6,34 @@
 <title>Our Story</title>
 
 <link href="css/style.css" type="text/css" rel="stylesheet" />
-
+<link href="css/button_style.css" type="text/css" rel="stylesheet" />
 </head>
 <body>
 
-<div id="wrap">
+<div id="wrap2" style="display: none;">
+	<h1>&nbsp</h1>
+	<div id='form_wrap' >
+		<form>
+			<p>亲爱的益清<colored><u>:&nbsp</u></colored></p>
+			<p>
+				&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp我好想你，今年很遗憾七夕没法和宝贝一起过，希望你一切都好。原本准备的礼物<colored><s>也</s></colored>出了点儿问题，但这<colored><s>也</s></colored>使我有了<colored><s>另</s></colored>一个新想法<colored><u>:&nbsp</u></colored>我希望以当前这个网页为起点，<colored><s>来</s></colored>记录我们<colored><s>在</s></colored>一起<colored><s>的每一个</s></colored>到过的<colored>每一个</colored>地方，有点儿像旅行地图那样<colored><u>。</u></colored>也或许<colored><s>还</s></colored>可以构思出其他内容<colored><u>，</u></colored>未来我们商量着来！
+			</p>
+			<p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp最后祝我家清清大宝贝七夕快乐！</p>
+
+			<p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<colored><s>此致</s></colored></p>	
+			<p><colored><s>敬礼</s></colored></p>
+			<p style="text-align:right">爱你的王泽昊&nbsp</p>
+			<p style="text-align:right">2021年8月14日</p>
+
+			<p style="font-size: 12px;text-align:center">下面这个计时器记录了我们在一起的时间，随时可以回来看!</p>
+			<p id='timer' style="font-size: 14px;text-align:center"></p>
+
+			<!-- <input type="submit" name ="submit" value="Now, I send, thanks!" /> -->
+		</form>
+	</div>
+</div>
+
+<div id="wrap" >
 	<h1>&nbsp</h1>
 	<div id='form_wrap' >
 		<form>
@@ -32,9 +55,22 @@
 		</form>
 	</div>
 </div>
+<button id="btnClick" class="btn-two blue rounded" style="display: block; margin: 0 auto;" onclick="changetext()">查看小周老师的批改</button>
 
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="js/div_switch.js"></script>
 
 <script>
+	function changetext() {
+		var btn = document.getElementById("btnClick");
+		if(btn.innerText=="查看小周老师的批改"){
+			btn.innerText="查看小王同学的作业";
+		}
+		else{
+			btn.innerText="查看小周老师的批改";
+		}
+	}
 	function changeTimezone(date, ianatz) {
 
 		// suppose the date is 12:00 UTC

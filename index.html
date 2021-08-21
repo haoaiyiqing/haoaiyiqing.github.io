@@ -26,7 +26,7 @@
 			<p style="text-align:right">2021年8月14日</p>
 
 			<p style="font-size: 12px;text-align:center">下面这个计时器记录了我们在一起的时间，随时可以回来看!</p>
-			<p id='timer' style="font-size: 14px;text-align:center"></p>
+			<p class='timer' style="font-size: 14px;text-align:center"></p>
 
 			<!-- <input type="submit" name ="submit" value="Now, I send, thanks!" /> -->
 		</form>
@@ -49,9 +49,7 @@
 			<p style="text-align:right">2021年8月14日</p>
 
 			<p style="font-size: 12px;text-align:center">下面这个计时器记录了我们在一起的时间，随时可以回来看!</p>
-			<p id='timer' style="font-size: 14px;text-align:center"></p>
-
-			<!-- <input type="submit" name ="submit" value="Now, I send, thanks!" /> -->
+			<p class='timer' style="font-size: 14px;text-align:center"></p>
 		</form>
 	</div>
 </div>
@@ -60,17 +58,19 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script src="js/div_switch.js"></script>
-
 <script>
-	function changetext() {
-		var btn = document.getElementById("btnClick");
-		if(btn.innerText=="查看小周老师的批改"){
-			btn.innerText="查看小王同学的作业";
-		}
-		else{
-			btn.innerText="查看小周老师的批改";
-		}
+function changetext() {
+	var btn = document.getElementById("btnClick");
+	if(btn.innerText=="查看小周老师的批改"){
+		btn.innerText="查看小王同学的作业";
 	}
+	else{
+		btn.innerText="查看小周老师的批改";
+	}
+}
+</script>
+<script>
+	
 	function changeTimezone(date, ianatz) {
 
 		// suppose the date is 12:00 UTC
@@ -109,7 +109,9 @@
 	  var seconds = Math.floor((now % (1000 * 60)) / 1000);
 		
 	  // Output the result in an element with id="demo"
-	  document.getElementById("timer").innerHTML = days + "天 " + hours + "小时 "
+	  document.getElementsByClassName("timer")[0].innerHTML = days + "天 " + hours + "小时 "
+	  + minutes + "分 "+ seconds+'秒 ';
+	  document.getElementsByClassName("timer")[1].innerHTML = days + "天 " + hours + "小时 "
 	  + minutes + "分 "+ seconds+'秒 ';
 		
 	}, 1000);
